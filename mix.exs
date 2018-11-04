@@ -27,6 +27,7 @@ defmodule Asker.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:slack, "~> 0.14.0"},
       {:tesla, "~> 1.2.0"},
+      {:jason, "~> 1.1.0"},
       {:quantum, "~> 2.3"},
       {:timex, "~> 3.0"},
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},

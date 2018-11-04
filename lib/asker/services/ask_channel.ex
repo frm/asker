@@ -7,7 +7,7 @@ defmodule Asker.Services.AskChannel do
 
   def perform do
     channel = config!(:slack, :channel)
-    threshold = config!(:slack, :threshold)
+    threshold = config!(:slack, :threshold) |> parse_threshold()
 
     with {:ok, questions} <- get_ask_reddit_questions(threshold) do
       questions
@@ -56,4 +56,7 @@ defmodule Asker.Services.AskChannel do
 
   defp format_channel("#" <> _channel_name = channel), do: channel
   defp format_channel(channel_name), do: "##{channel_name}"
+
+  defp parse_threshold(t) when is_integer(t), do: t
+  defp parse_threshold(t) when is_binary(t), do: String.to_integer(t)
 end

@@ -1,1 +1,3 @@
 export SLACK_BOT_OAUTH_TOKEN="your-slack-bot-oauth-token"
+export SLACK_CHANNEL="your-slack-channel"
+export SLACK_THRESHOLD=15000
