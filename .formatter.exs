@@ -40,6 +40,7 @@
     patch: :*,
     put: :*,
     delete: :*,
+    match: :*,
     resources: :*,
     pipeline: :*,
     scope: :*,

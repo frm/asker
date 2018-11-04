@@ -2,11 +2,10 @@ use Mix.Config
 
 config :asker, Asker.Scheduler,
   jobs: [
-    ask_jarvas: [
-      schedule: {:extended, "*/30"},
-      task: {Asker.Services.AskChannel, :perform, []}
-    ]
+    {"@hourly", {Asker.Services.AskChannel, :perform, []}}
   ]
+
+config :asker, Asker.DummyServer, port: {:system, "PORT"}
 
 config :asker, :slack,
   oauth_token: {:system, "SLACK_BOT_OAUTH_TOKEN"},

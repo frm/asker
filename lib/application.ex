@@ -19,6 +19,7 @@ defmodule Asker.Application do
 
     [
       Asker.Scheduler,
+      Asker.DummyServer,
       %{
         id: Slack.Bot,
         start:
